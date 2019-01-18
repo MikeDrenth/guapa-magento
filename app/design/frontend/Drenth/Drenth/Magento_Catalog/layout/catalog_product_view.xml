@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+    Add 'previous' tab on Product detail page, showing the last 4 products
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">            
+            <block class="Magento\Catalog\Block\Widget\RecentlyViewed" name="recently_viewed" template="Magento_Catalog::product/widget/viewed/grid.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="uiComponent" xsi:type="string">widget_recently_viewed</argument>
+                    <argument translate="true" name="title" xsi:type="string">Previous</argument>
+                    <argument name="page_size" xsi:type="number">4</argument>
+                    <argument name="show_attributes" xsi:type="string">name,image,price,learn_more</argument>
+                    <argument name="show_buttons" xsi:type="string">add_to_cart,add_to_compare,add_to_wishlist</argument>
+                </arguments>            
+            </block>
+        </referenceBlock>
+    </body> 
+</page>
