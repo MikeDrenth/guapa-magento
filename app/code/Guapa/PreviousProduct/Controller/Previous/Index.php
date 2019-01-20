@@ -1,7 +1,10 @@
 <?php
 
-
 namespace Guapa\PreviousProduct\Controller\Previous;
+
+use Magento\Framework\App\Action;
+use Magento\Framework\Exception\NotFoundException;
+use Magento\Framework\Controller\ResultFactory;
 
 class Index extends \Magento\Framework\App\Action\Action
 {

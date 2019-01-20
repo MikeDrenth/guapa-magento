@@ -1,4 +1,9 @@
 <?xml version="1.0" ?>
+<!--
+/**
+ * Display last 10 visited products
+ */
+-->
 <page layout="2columns-left" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 	<update handle="customer_account"/>
 	    <head>
@@ -6,7 +11,15 @@
     </head>
 	<body>
 		<referenceContainer name="content">
-			<block class="Guapa\PreviousProduct\Block\Previous\Index" name="previous.index" template="Guapa_PreviousProduct::previous/index.phtml"/>
+			<!--block class="Guapa\PreviousProduct\Block\Previous\Index" name="previous.index" template="Guapa_PreviousProduct::previous/index.phtml"/-->         
+            <block class="Magento\Catalog\Block\Widget\RecentlyViewed" name="recently_viewed" template="Magento_Catalog::product/widget/viewed/grid.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="uiComponent" xsi:type="string">widget_recently_viewed</argument>
+                    <argument translate="true" name="title" xsi:type="string"></argument>
+                    <argument name="page_size" xsi:type="number">10</argument>
+                    <argument name="show_attributes" xsi:type="string">name,price,learn_more</argument>
+                </arguments>            
+            </block>
 		</referenceContainer>
 	</body>
 </page>
