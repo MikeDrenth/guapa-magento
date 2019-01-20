@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+                <referenceBlock name="customer_account_navigation">
+                    <block class="Namespace\Module\Block\View\Element\Html\Link\Current" name="customer-account-navigation-recently-visited">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Recent visited products</argument>
+                            <argument name="path" xsi:type="string">customer/previous/index</argument>
+                            <argument name="sortOrder" xsi:type="number">220</argument>
+                        </arguments>
+                    </block>
+                </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>
