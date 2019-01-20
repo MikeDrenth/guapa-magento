@@ -4,11 +4,11 @@
     <body>
         <referenceContainer name="sidebar.main">
                 <referenceBlock name="customer_account_navigation">
-                    <block class="Namespace\Module\Block\View\Element\Html\Link\Current" name="customer-account-navigation-recently-visited">
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-recently-visited">
                         <arguments>
                             <argument name="label" xsi:type="string" translate="true">Recent visited products</argument>
                             <argument name="path" xsi:type="string">customer/previous/index</argument>
-                            <argument name="sortOrder" xsi:type="number">220</argument>
+                            <argument name="sortOrder" xsi:type="number">300</argument>
                         </arguments>
                     </block>
                 </referenceBlock>
