@@ -1,0 +1,39 @@
+<?php 
+    $recentlyVisitedProducts = $this->getMostRecentlyViewed();
+?>
+<?php if ($recentlyVisitedProducts && count($recentlyVisitedProducts)): ?>
+<div class="table-wrapper previous-products">
+    <div class=""><p>Below you're last 10 visisted products</p></div>
+    <table class="data table table-products-table previous" id="previous-products-table">
+        <caption class="table-caption">Products</caption>
+        <thead>
+            <tr>
+                <th scope="col" class="col id">Product name</th>
+                <th scope="col" class="col date">SKU</th>
+                <th scope="col" class="col shipping">Price</th>
+                <th scope="col" class="col total">View product</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($recentlyVisitedProducts as $p) : ?>
+            <?php 
+                // Get prodct name by product ID
+                $productId  = $p['product_id'];
+                $product    = $this->getProduct($productId);
+
+                // Get product url by product ID
+                $productUrl = $this->getProductUrl($productId);
+            ?>
+                <tr>
+                    <td class="col name"><?= /* @escapeNotVerified */ $product->getName() ?></td>
+                    <td class="col sku"><?= /* @escapeNotVerified */ $product->getSku() ?></td>
+                    <td class="col price"><?= /* @escapeNotVerified */ $this->helper('Magento\Framework\Pricing\Helper\Data')->currency($product['price'],true,false); ?></td>
+                    <td class="col link"><a href="<?= /* @escapeNotVerified */ $productUrl;?>">Visit</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<?php else: ?>
+<div class="message info empty"><span><?= /* @escapeNotVerified */ __('You have no recently visited products.') ?></span></div>
+<?php endif; ?>
