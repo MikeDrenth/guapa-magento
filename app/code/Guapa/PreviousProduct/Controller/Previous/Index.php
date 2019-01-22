@@ -6,8 +6,7 @@ use Magento\Framework\App\Action;
 use Magento\Framework\Exception\NotFoundException;
 use Magento\Framework\Controller\ResultFactory;
 
-class Index extends \Magento\Framework\App\Action\Action
-{
+class Index extends \Magento\Framework\App\Action\Action {
 
     protected $resultPageFactory;
 
@@ -17,7 +16,7 @@ class Index extends \Magento\Framework\App\Action\Action
      * @param \Magento\Framework\App\Action\Context  $context
      * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
      */
-    public function __construct(
+    public function __construct (
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory
     ) {
@@ -30,8 +29,7 @@ class Index extends \Magento\Framework\App\Action\Action
      *
      * @return \Magento\Framework\Controller\ResultInterface
      */
-    public function execute()
-    {
+    public function execute() {
         return $this->resultPageFactory->create();
     }
 }

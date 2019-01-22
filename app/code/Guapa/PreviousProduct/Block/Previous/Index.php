@@ -2,8 +2,7 @@
 
 namespace Guapa\PreviousProduct\Block\Previous;
 
-class Index extends \Magento\Framework\View\Element\Template
-{
+class Index extends \Magento\Framework\View\Element\Template {
     protected $recentlyViewed;
 
     public function __construct (
